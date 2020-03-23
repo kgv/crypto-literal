@@ -1,0 +1,25 @@
+[package]
+name = "crypto-literal-macro"
+version = "0.1.0"
+authors = ["kgv <kgv@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+description = "Procedural macros for set bit mask."
+homepage = "https://crates.io/crates/crypto-literal-macro"
+documentation = "https://docs.rs/crypto-literal-macro"
+repository = "https://github.com/kgv/crypto-literal"
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+anyhow = "1.0.27"
+bincode = "1.2.1"
+crypto-literal-algorithm = "0.1"
+generic-array = "0.12.3"
+lazy_static = "1.4.0"
+proc-macro2 = "1.0.9"
+quote = "1.0.3"
+rand = "0.7.3"
+sha2 = "0.8.1"
+syn = { version = "1.0.17", features = ["full"] }

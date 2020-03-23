@@ -1,0 +1,14 @@
+[package]
+name = "crypto-literal-algorithm"
+version = "0.1.0"
+authors = ["kgv <kgv@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+description = "Procedural macros for set bit mask."
+homepage = "https://crates.io/crates/crypto-literal-algorithm"
+documentation = "https://docs.rs/crypto-literal-algorithm"
+repository = "https://github.com/kgv/crypto-literal"
+edition = "2018"
+
+[dependencies]
+aes = "0.3.2"
+ofb = "0.1.1"
