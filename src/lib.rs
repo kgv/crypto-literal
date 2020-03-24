@@ -67,8 +67,7 @@ where
 
 impl<T> Debug for CryptoLiteral<T>
 where
-    T: Literal,
-    T: Debug,
+    T: Debug + Literal + ?Sized,
     <T as ToOwned>::Owned: Debug,
 {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {

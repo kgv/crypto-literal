@@ -1,6 +1,6 @@
 [package]
 name = "crypto-literal"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["kgv <kgv@users.noreply.github.com>"]
 license = "MIT OR Apache-2.0"
 description = "Crypto literal procedural macros."
