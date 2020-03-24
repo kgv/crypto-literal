@@ -14,7 +14,7 @@ edition = "2018"
 bincode = "1.2.1"
 crypto-literal-algorithm = "0.1.1"
 crypto-literal-macro = "0.1.1"
-derive_more = { version = "0.99.4-alpha.0", rev = "f9c854c0", git = "https://github.com/JelteF/derive_more" }
+derive_more = "0.99.3"
 serde = "1.0.105"
 
 [dev-dependencies]
