@@ -1,9 +1,9 @@
 [package]
 name = "crypto-literal-algorithm"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["kgv <kgv@users.noreply.github.com>"]
 license = "MIT OR Apache-2.0"
-description = "Procedural macros for set bit mask."
+description = "Crypto literal procedural macros algorithm."
 homepage = "https://crates.io/crates/crypto-literal-algorithm"
 documentation = "https://docs.rs/crypto-literal-algorithm"
 repository = "https://github.com/kgv/crypto-literal"
