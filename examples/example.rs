@@ -15,12 +15,12 @@ lazy_static! {
 }
 
 fn main() -> Result<()> {
-    println!("CRYPTO_LITERAL: {:?}", &**CRYPTO_LITERAL);
+    println!("CRYPTO_LITERAL: {:?}", &*CRYPTO_LITERAL);
 
     let crypto_literal = encrypt!("The quick brown fox jumps over the lazy dog.");
-    println!("-crypto_literal: {:?}", &*crypto_literal);
+    println!("crypto_literal: {:?}", crypto_literal);
 
     let crypto_literal = encrypt!(0xffff_0000_ffff_0000_u64);
-    println!("-crypto_literal: {:x?}", &*crypto_literal);
+    println!("crypto_literal: {:x?}", crypto_literal);
     Ok(())
 }
