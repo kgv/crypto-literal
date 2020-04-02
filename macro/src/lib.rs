@@ -1,6 +1,3 @@
-#![feature(const_type_name)]
-#![recursion_limit = "256"]
-
 use crate::{algorithm::Algorithm, crypto_literal::CryptoLiteral, key::Key};
 use generic_array::{
     typenum::{U16, U24, U32},
@@ -8,7 +5,7 @@ use generic_array::{
 };
 use lazy_static::lazy_static;
 use proc_macro::TokenStream;
-use quote::quote;
+use quote::ToTokens;
 use rand::{thread_rng, Rng};
 use std::sync::Mutex;
 use syn::parse_macro_input;
@@ -64,8 +61,8 @@ pub fn key(attr: TokenStream, item: TokenStream) -> TokenStream {
 /// Encrypt.
 #[proc_macro]
 pub fn encrypt(item: TokenStream) -> TokenStream {
-    let crypto_literal_tokens = parse_macro_input!(item as CryptoLiteral);
-    TokenStream::from(quote!(#crypto_literal_tokens))
+    let crypto_literal = parse_macro_input!(item as CryptoLiteral);
+    crypto_literal.into_token_stream().into()
 }
 
 mod algorithm;
