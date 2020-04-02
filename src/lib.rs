@@ -36,21 +36,17 @@ pub use crypto_literal_algorithm as algorithm;
 pub use crypto_literal_macro as r#macro;
 pub use r#macro::{algorithm, encrypt, key};
 
-// use derive_more::{AsRef, Deref, Display, From, Into};
-use derive_more::{AsRef, Display, From, Into};
+use derive_more::{AsRef, Deref, Display, From, Into};
 use serde::Deserialize;
 use std::{
     borrow::Cow,
     fmt::{self, Debug, Formatter},
-    ops::Deref,
 };
 
 /// Crypto literal.
-// TODO: uncomment then derive_more = "0.99.4"
-// #[derive(AsRef, Deref, Display, From, Into)]
-// #[deref(forward)]
-#[derive(AsRef, Display, From, Into)]
+#[derive(AsRef, Deref, Display, From, Into)]
 #[as_ref(forward)]
+#[deref(forward)]
 #[display(fmt = "{}", _0)]
 pub struct CryptoLiteral<T: Literal + ?Sized>(Cow<'static, T>);
 
@@ -72,14 +68,6 @@ where
 {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         f.debug_tuple("CryptoLiteral").field(&self.0).finish()
-    }
-}
-
-impl<T: Literal + ?Sized> Deref for CryptoLiteral<T> {
-    type Target = T;
-
-    fn deref(&self) -> &Self::Target {
-        &*self.0
     }
 }
 
